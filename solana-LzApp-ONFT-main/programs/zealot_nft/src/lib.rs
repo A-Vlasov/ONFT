@@ -16,6 +16,11 @@ use oapp::{
     LzReceiveParams,
 };
 use state::*;
+// Explicit imports for Playground
+use crate::instructions::init_oft::InitONftParams;
+use crate::instructions::init_adapter_oft::InitAdapterONftParams;
+use crate::instructions::quote_oft::{QuoteONftParams, QuoteONftResult};
+use crate::instructions::quote_onft::QuoteOnftMsgParams;
 
 declare_id!("HRPXLCqspQocTjfcX4rvAPaY9q6Gwb1rrD3xXWrfJWdW");
 

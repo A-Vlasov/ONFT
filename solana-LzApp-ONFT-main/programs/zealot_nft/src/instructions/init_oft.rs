@@ -38,7 +38,7 @@ pub struct InitONft<'info> {
 impl InitONft<'_> {
     pub fn apply(ctx: &mut Context<InitONft>, params: &InitONftParams) -> Result<()> {
 
-        if !is_supported_mint(&ctx.accounts.mint) {
+        if !Self::is_supported_mint(&ctx.accounts.token_mint) {
             return Err(Error::UnsupportedBaseMint.into());
         }
         ctx.accounts.ONft_config.bump = ctx.bumps.ONft_config;
