@@ -1,4 +1,5 @@
 use crate::*;
+use crate::state::*;
 use anchor_spl::token_interface::{Mint, TokenInterface};
 
 /// This instruction should always be in the same transaction as InitializeMint.
