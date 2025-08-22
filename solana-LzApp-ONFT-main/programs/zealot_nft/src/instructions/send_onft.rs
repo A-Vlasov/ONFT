@@ -3,7 +3,6 @@ use anchor_lang::prelude::*;
 use anchor_spl::token_interface::{self, Burn, Mint, TokenAccount, TokenInterface, TransferChecked};
 use oapp::endpoint::{instructions::SendParams as EndpointSendParams, MessagingReceipt};
 
-#[event_cpi]
 #[derive(Accounts)]
 #[instruction(params: SendONftParams)]
 pub struct SendONft<'info> {

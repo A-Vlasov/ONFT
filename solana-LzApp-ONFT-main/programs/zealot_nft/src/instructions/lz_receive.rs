@@ -9,7 +9,6 @@ use oapp::endpoint::{
     ConstructCPIContext,
 };
 
-#[event_cpi]
 #[derive(Accounts)]
 #[instruction(params: LzReceiveParams)]
 pub struct LzReceive<'info> {
@@ -155,7 +154,7 @@ impl LzReceive<'_> {
             rate_limiter.refill(amount_received_ld)?;
         }
 
-        emit_cpi!(ONftReceived {
+        emit!(ONftReceived {
             guid: params.guid,
             src_eid: params.src_eid,
             to: to_address,
