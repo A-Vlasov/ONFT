@@ -4,7 +4,6 @@ use anchor_spl::token_interface::{
 };
 use oapp::endpoint::{instructions::SendParams as EndpointSendParams, MessagingReceipt};
 
-#[event_cpi]
 #[derive(Accounts)]
 #[instruction(params: SendParams)]
 pub struct Send<'info> {
@@ -142,7 +141,7 @@ impl Send<'_> {
             },
         )?;
 
-        emit_cpi!(ONftSent {
+        emit!(ONftSent {
             guid: receipt.guid,
             dst_eid: params.dst_eid,
             from: ctx.accounts.token_source.key(),

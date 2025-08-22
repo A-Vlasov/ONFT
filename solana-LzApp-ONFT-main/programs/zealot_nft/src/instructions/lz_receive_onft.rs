@@ -6,7 +6,6 @@ use oapp::endpoint::{cpi::accounts::Clear, instructions::ClearParams, ConstructC
 use mpl_token_metadata::instruction as mpl_ix;
 use mpl_token_metadata::ID as METADATA_PROGRAM_ID;
 
-#[event_cpi]
 #[derive(Accounts)]
 #[instruction(params: LzReceiveParams)]
 pub struct LzReceiveONft<'info> {
@@ -196,7 +195,7 @@ impl LzReceiveONft<'_> {
         );
         oapp::endpoint_cpi::clear(cpi_ctx, ClearParams { guid: params.guid })?;
 
-        emit_cpi!(ONftReceived {
+        emit!(ONftReceived {
             guid: params.guid,
             src_eid: params.src_eid,
             to: to_pubkey,
