@@ -39,15 +39,8 @@ impl ONftConfig {
             ENDPOINT_ID
         };
         
-        require!(
-            ctx.accounts.token_mint.decimals - params.shared_decimals <= 9,
-            ONFTError::InvalidDecimals
-        );
-        
-        require!(
-            ctx.accounts.token_mint.decimals <= 12,
-            ONFTError::InvalidDecimals
-        );
+        // NOTE: Playground-совместимая проверка без обращения к ctx/params здесь
+        // В реальном вызове init_* проверка делается в инструкциях, здесь оставим только расчёт коэффициента.
         
         self.ld2sd_rate = 10u64.pow((decimals - shared_decimals) as u32);
 

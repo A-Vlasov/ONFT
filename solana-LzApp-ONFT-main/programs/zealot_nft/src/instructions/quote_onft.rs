@@ -38,7 +38,8 @@ impl QuoteOnftMsg<'_> {
                 sender: ctx.accounts.ONft_config.key(),
                 dst_eid: params.dst_eid,
                 receiver: ctx.accounts.peer.address,
-                message: onft_msg_codec::encode(params.to, params.token_id),
+                // для согласованности с EVM ONFT используем ABI-формат
+                message: onft_msg_codec::encode_abi(params.to, params.token_id),
                 pay_in_lz_token: params.pay_in_lz_token,
                 options: ctx
                     .accounts

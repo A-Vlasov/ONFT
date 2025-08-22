@@ -15,7 +15,7 @@ pub struct TransferAdmin<'info> {
 
 impl TransferAdmin<'_> {
     pub fn apply(ctx: &mut Context<TransferAdmin>, params: &TransferAdminParams) -> Result<()> {
-        ctx.accounts.ONft_config.admin = new_admin;
+        ctx.accounts.ONft_config.admin = params.admin;
         Ok(())
     }
 }
