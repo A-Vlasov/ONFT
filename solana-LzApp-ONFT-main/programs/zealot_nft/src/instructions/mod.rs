@@ -8,7 +8,6 @@ pub mod quote_oft;
 pub mod quote_onft;
 pub mod send_onft;
 pub mod lz_receive_onft;
-pub mod quote_onft;
 pub mod send;
 pub mod set_delegate;
 pub mod set_enforced_options;
@@ -16,9 +15,6 @@ pub mod set_mint_authority;
 pub mod set_peer;
 pub mod set_rate_limit;
 pub mod transfer_admin;
-pub mod init_adapter_oft;
-pub mod init_oft;
-pub mod quote_oft;
 
 pub use init_adapter_oft::*;
 pub use init_oft::*;
